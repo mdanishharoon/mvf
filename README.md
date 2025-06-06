@@ -1,45 +1,30 @@
-# mvf: A Script for Moving Files Between Windows and WSL
+# MVF - Move Files (Windows ↔ WSL)
 
-`mvf` (Move File) is a command-line utility for the Windows Subsystem for Linux (WSL) that simplifies moving files and directories between the Windows and WSL filesystems. It automatically handles the complex path translations, so you don't have to manually type out paths like `/mnt/c/Users/YourUser/...`.
+ `mvf` (Move File) is a fast, shell-agnostic command-line utility for the Windows Subsystem for Linux (WSL) that simplifies moving files and directories between the Windows and WSL filesystems. It automatically handles the complex path translations, so you don't have to manually type out paths like `/mnt/c/Users/YourUser/...`.
 
-## Overview
 
-Working in a mixed Windows and WSL environment often requires transferring files back and forth and I wanted a clean and simple way to transfer files back and forth between windows and wsl home directories. This script streamlines that process by providing a simple, intuitive syntax to streamline file transfers. I wrote this to specifically move files between my upper level directories on windows and wsl and so havent tested it out much on absolute paths myself. feel free to make any improvements and make a PR.
+## Features
 
-## Installation
+- **Shell-agnostic**: Works with any shell (bash, zsh, fish, etc.)
+- **Auto-directory creation**: Creates nested destination directories automatically
+- **Bidirectional**: Transfer files both ways (Windows ↔ WSL)
 
-1. **Save the Script**: Save the provided script code into a file named `mvf`.
-2. **Make it Executable**: Open your WSL terminal and run the following command to grant execute permissions to the script.
+## Quick Start
 
-    ```bash
-    chmod +x mvf
-    ```
+```bash
+# Install
+git clone https://github.com/mdanishharoon/mvf
+cd mvf
+make install
 
-3. **Move to your PATH (Recommended)**: To use the `mvf` command from any directory, move it to a location included in your system's PATH. A common choice is `/usr/local/bin`.
+# Use from anywhere
+mvf to-wsl "Downloads/file.txt" "Documents/"
+mvf to-win "Documents/project" "Desktop/Backup/"
+```
 
-    ```bash
-    sudo mv mvf /usr/local/bin/
-    ```
 
-Now you can simply type `mvf` in your terminal, no matter your current location.
 
-## Usage
 
-The script's syntax is based on specifying the direction of the transfer (`to-wsl` or `to-win`), followed by the source and destination paths.
-
-### Syntax
-
-- **Move from Windows to WSL**:
-
-    ```bash
-    mvf to-wsl <windows_path> <wsl_destination>
-    ```
-
-- **Move from WSL to Windows**:
-
-    ```bash
-    mvf to-win <wsl_path> <windows_destination>
-    ```
 
 ### Examples
 
@@ -69,3 +54,21 @@ The script's syntax is based on specifying the direction of the transfer (`to-ws
     # This will create C:\Users\YourUser\Desktop\backup\project-files
     mvf to-win project-files Desktop/backup/
     ```
+
+## Documentation
+
+- **[Installation Guide](docs/INSTALL.md)** - Detailed installation instructions
+- **[Technical Documentation](docs/README-C.md)** - Code structure and implementation details
+
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+See [LICENSE](LICENSE) file for details. 
