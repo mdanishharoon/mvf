@@ -40,7 +40,7 @@ move_to_win() {
 
     WIN_DEST_PATH="/mnt/c/Users/$WIN_USER/$2"
 
-    mkdir -p "$(dirname "$WIN_DEST_PATH")"
+    mkdir -p "$WIN_DEST_PATH"
 
     rsync -avh ~/"$1" "$WIN_DEST_PATH" && echo "Move successful!"
 }
