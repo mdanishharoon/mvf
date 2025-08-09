@@ -1,4 +1,6 @@
-# MVF - Move Files (Windows ↔ WSL)
+# MVF - Move Files (Windows ↔ WSL) 
+
+(i have later realised that this coulda been done w symlinks but it works well for me and it probably will work well enough for you so why worry about sum symlinks)
 
  `mvf` (Move File) is a fast, shell-agnostic command-line utility for the Windows Subsystem for Linux (WSL) that simplifies moving files and directories between the Windows and WSL filesystems. It automatically handles the complex path translations, so you don't have to manually type out paths like `/mnt/c/Users/YourUser/...`.
 
